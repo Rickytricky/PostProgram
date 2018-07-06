@@ -1,0 +1,35 @@
+﻿@model PostProgram.ViewModel.VModel
+
+@{ 
+    ViewBag.Title = "Blog Chido";
+}
+
+<div style="margin-bottom:50px;">
+    <hr />
+    <h2>Blog Chido</h2>
+    <hr />
+    <div>
+        @Html.ActionLink("+ Nuevo Post", "Create", "Home", new { @class = "btn btn-primary", @style = "float:right" })
+        <h3>Posts</h3>
+    </div>
+</div>
+
+<div class="container">
+    @foreach (var posit in Model.postsList)
+    {
+    <div class="row">
+        <div class="col-lg-8">
+            <h3>@Html.ActionLink(posit.Title, "ViewPost", "Home", new { id = posit.Id}, null)</h3>
+            <h5>@posit</h5>
+            <h6>@posit.Time</h6>
+        </div>
+        <div class="col-lg-2" style="top:15px;">
+            @Html.ActionLink("Editar", "Edit", "Home", new { id = posit.Id }, new{ @class = "btn btn-primary" })
+            @*<button class="btn btn-primary">Editar</button>*@
+        </div>
+        <div class="col-lg-2" style="top:15px;">
+            @Html.ActionLink("Eliminar", "Delete", "Home", new { id = posit.Id }, new{ @class = "btn btn-danger" })
+        </div>
+    </div>
+    }
+</div>

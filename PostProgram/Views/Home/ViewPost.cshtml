@@ -1,0 +1,23 @@
+﻿@model PostProgram.Models.Post
+@{
+    ViewBag.Title = "ViewPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>@Model.Title</h2>
+    <h6>@Model.Time</h6>
+    <h5>@Model.CategoryId</h5>
+
+    <div>
+        @Model.Content
+    </div>
+    <hr />
+    <div>
+        Nombre: -_____
+        Comentarios:-______
+    </div>
+    <hr />
+    <button type="button" class="btn btn-danger"><a href="javascript:void(0);" onclick="history.go(-1);">Regresar</a></button>
+</div>
+
