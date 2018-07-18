@@ -10,5 +10,6 @@ namespace PostProgram.Db
     public class CategoryContext : DbContext
     {
         public DbSet<Category> Category { get; set; }
+
     }
 }
